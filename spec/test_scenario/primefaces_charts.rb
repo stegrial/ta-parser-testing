@@ -5,7 +5,7 @@ feature 'TrueAutomation.IO capybara example' do
     visit 'https://www.primefaces.org/showcase/'
 
     find(ta(   'primefaces:charts')).click
-  
+
     sleep 3
   end
 

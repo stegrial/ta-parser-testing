@@ -18,7 +18,8 @@ feature 'TrueAutomation.IO capybara example' do
     path = find(:xpath, "//div[@id='ext-expandtrigger-1']/div").path
     puts path.downcase
     # find(:xpath, ta('sencha:dropdawn', "//div[@id='ext-expandtrigger-1']/div")).click
-    find(ta(   'sencha:dropdawn'), visible: false).click
+    find(ta(   'sencha:dropdawn'), visible: false).click #recording after the page reloading
+    # find(ta(   'sencha:dropdawn:before_reload'), visible: false).click #worked
 
   sleep 3
   end

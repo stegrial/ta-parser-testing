@@ -4,17 +4,19 @@ feature 'TrueAutomation.IO capybara example' do
 
   scenario 'Facebook three points' do
     visit 'https://www.facebook.com'
-    find(:id, 'email').set('eshapovalov298@gmail.com')
-    # find(ta(   'sign_in:email_field')).set('eshapovalov298@gmail.com')
+    # select "10", :from => ta(   'day')
 
-    find(:id, 'pass').set('Tester1234')
-    # find(ta(   'sign_in:pass_field')).set('Tester1234')
+    # find(:id, 'email').set('eshapovalov298@gmail.com')
+    find(ta(   'sign_in:email_field')).set('eshapovalov298@gmail.com')
 
-    find(:id, 'loginbutton').click
-    # find(ta(   'sign_in:login_btn')).click
+    # find(:id, 'pass').set('Tester1234')
+    find(ta(   'sign_in:pass_field')).set('Tester1234')
 
-    find(:xpath, "//span[text()='Mark']").click
-    # find(ta(   'home:profile')).click
+    # find(:id, 'loginbutton').click
+    find(ta(   'sign_in:login_btn')).click
+
+    # find(:xpath, "//span[text()='Mark']").click
+    find(ta(   'home:profile')).click
 
     sleep 10
     path = find(:xpath, "(//a[@data-testid='post_chevron_button'])[2]").path
