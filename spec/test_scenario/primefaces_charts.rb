@@ -6,7 +6,7 @@ feature 'TrueAutomation.IO capybara example' do
 
     sleep 10
 
-    find(ta(   'primefaces:charts')).click
+    find(ta('primefaces:charts')).click
 
     sleep 3
   end
