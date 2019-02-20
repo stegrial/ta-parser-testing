@@ -40,7 +40,7 @@ feature 'TrueAutomation.IO capybara example' do
     find(ta('p:aliexpres:home:categories:clothesForMan')).hover
     find(ta('p:aliexpres:home:categories:clothesForChildren')).hover
     find(ta('p:aliexpres:home:categories:watch')).hover
-    
+
     sleep 5
 
 

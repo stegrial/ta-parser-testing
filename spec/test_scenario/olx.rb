@@ -19,7 +19,7 @@ feature 'TrueAutomation.IO capybara example' do
 
     # search field
     fill_in 'headerSearch', with: 'iphone'
-    
+
     find(:xpath, '//div[@id="autosuggest-div"]/ul/li[1]').click
 
     find(:xpath, '//span[@class="highlight-close"]').click
