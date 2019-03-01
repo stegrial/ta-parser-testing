@@ -3,7 +3,7 @@ require 'spec_helper'
 feature 'TrueAutomation.IO capybara example' do
   scenario 'Test example' do
     visit 'https://hotline.ua/'
-    
+
     # close popup window your city
     #find(:css, ('.close')).click
     find(:css, ta('p:hotline:home:closePopup', '.close')).click
