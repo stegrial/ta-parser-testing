@@ -7,7 +7,7 @@ feature 'TrueAutomation.IO capybara example' do
 
     visit 'https://venus-preprod.moovweb.net'
 
-    sleep 10
+    sleep 20
     # find(:xpath, ("(//button[@aria-label='Account'])[1]")).click
     # find(:xpath, ta('venus:account_button', "(//button[@aria-label='Account'])[1]")).click
     find(ta("venus:account_button")).click
