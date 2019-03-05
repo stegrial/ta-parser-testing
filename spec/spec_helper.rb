@@ -24,15 +24,20 @@ $data = OpenStruct.new($data)
 Dir[File.join(spec_dir, 'support/**/*.rb')].each {|f| require f}
 
 RSpec.configure do |config|
-  caps_chrome = Selenium::WebDriver::Remote::Capabilities.chrome
-  caps_chrome['chromeOptions'] = {}
-  caps_chrome['chromeOptions']['args'] = ['--disable-notifications']
-  caps_chrome['chromeOptions'] = {'mobileEmulation' => {
-    'deviceMetrics' => { 'width' => 360, 'height' => 640, 'pixelRatio' => 3.0 },
-    'userAgent' => "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19"
-  }}
+
+  # caps_chrome = Selenium::WebDriver::Remote::Capabilities.chrome
+  # caps_chrome['chromeOptions'] = {}
+  # caps_chrome['chromeOptions']['args'] = ['--disable-notifications']
+  # caps_chrome['chromeOptions'] = {'mobileEmulation' => {
+  #     'deviceMetrics' => { 'width' => 360, 'height' => 640, 'pixelRatio' => 3.0 },
+  #     'userAgent' => "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19"
+  # }}
+
+  mobile_emulation = {'deviceName' => 'iPhone X'}
+  caps = Selenium::WebDriver::Remote::Capabilities.chrome('chromeOptions' => {'mobileEmulation' => mobile_emulation})
+
   Capybara.register_driver :true_automation_driver do |app|
-    TrueAutomation::Driver::Capybara.new(app, desired_capabilities: caps_chrome)
+    TrueAutomation::Driver::Capybara.new(app, desired_capabilities: caps)
   end
 
   Capybara.configure do |capybara|
