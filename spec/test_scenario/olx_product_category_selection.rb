@@ -15,13 +15,12 @@ feature 'TrueAutomation.IO capybara example' do
      find(:xpath, ta('Jul:olx:main_page:free_animal_mating', "//a[@data-id='1520']")).click
 
     sleep 2
-     #find(:xpath, "//a[@data-cy='galleryWide']").click
+     #find(:xpath, "//a[@class='topTabView link']").click
      #find(ta('Jul:olx:product_page:gallery_view')).click
-     #find(:xpath, ta('Jul:olx:product_page:gallery_view', "//span[@data-cy='galleryWide']")).click
      find(:xpath, ta('Jul:olx:product_page:gallery_view', "//a[@class='topTabView link']")).click
 
     sleep 3
-     #find(:xpath, "//li[@class='wrap tleft rel fleft ad_idD2oWo ']").click
+     #find(:xpath, "//ul[@class='gallerywide clr normal ']/li[12]").click
      #find(ta('Jul:olx:product_page:product')).click
      find(:xpath, ta('Jul:olx:product_page:product', "//ul[@class='gallerywide clr normal ']/li[12]")).click
 
